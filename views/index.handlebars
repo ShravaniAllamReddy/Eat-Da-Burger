@@ -13,32 +13,28 @@
     <div class="row">
 
         <div class="col-md-6">
-            <div class="card mt-2 mb-2" style="background:transparent">
-                <h3 class="card-header text-center"> Burgers on the Menu</h3>
-                <div class="card-body">
-                    <ol>
-                        {{#each burgers}}
-                        {{#unless devour}}
-                        {{> burgers/burger-block devour=true}}
-                        {{/unless}}
-                        {{/each}}
-                    </ol>
-                </div>
+            <div class="mt-2 mb-2">
+                <h3 class="text-center"> Burgers on the Menu</h3>
+                <ol>
+                    {{#each burgers}}
+                    {{#unless devour}}
+                    {{> burgers/burger-block devour=true}}
+                    {{/unless}}
+                    {{/each}}
+                </ol>
             </div>
         </div>
 
         <div class="col-md-6">
-            <div class="card mt-2 mb-2" style="background:transparent">
-                <h3 class="card-header text-center">Devoured Burgers:</h3>
-                <div class="card-body">
-                    <ol>
-                        {{#each burgers}}
-                        {{#if devour}}
-                        {{> burgers/burger-block devour=false}}
-                        {{/if}}
-                        {{/each}}
-                    </ol>
-                </div>
+            <div class="mt-2 mb-2">
+                <h3 class="text-center">Devoured Burgers:</h3>
+                <ol>
+                    {{#each burgers}}
+                    {{#if devour}}
+                    {{> burgers/burger-block devour=false}}
+                    {{/if}}
+                    {{/each}}
+                </ol>
             </div>
         </div>
     </div>
@@ -50,7 +46,8 @@
                     <textarea type="text" style="width:300px;" class="rounded" id="burger"></textarea>
                     <input type="hidden" id="devour" value="0">
                 </div>
-                <button type="submit" class="btn btn-success"> Place an Order<i class="fas fa-hamburger ml-2"></i></button>
+                <button type="submit" class="btn btn-success"> Place an Order<i
+                        class="fas fa-hamburger ml-2"></i></button>
 
 
                 <h4 class="mt-2">Request a new Burger and Place your order</h4>
