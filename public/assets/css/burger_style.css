@@ -15,7 +15,7 @@ h3{
     color: tomato;
 }
 
-.list-group-item {
+.form-control {
     display: list-item;
 }
 
@@ -24,3 +24,4 @@ h3{
     float: none;
     margin: 0 auto;
 }
+
