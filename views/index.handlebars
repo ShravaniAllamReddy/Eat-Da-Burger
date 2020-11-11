@@ -1,49 +1,60 @@
-<div class="jumbotron-fluid">
-    <div class="container-fluid">
-        <h1 class="display-4" style="background-color:peru;color:darkolivegreen;font-weight:bold;">
-            EAT-DA-BURGER
-        </h1>
+<nav class="navbar navbar-light justify-content-center sticky-top"
+    style="background-color:rgb(204, 124, 44);color:rgb(58, 78, 23);">
 
-    </div>
-</div>
+    <h1 style="font-weight:bold" class="text-center">EARTHY BURGER </h1>
+
+    <img src="/assets/img/animatedburger.gif" width="60" alt="burgerlogo">
+
+</nav>
+
 
 <div class="container">
 
-    {{!-- <h1>EAT DA BURGER!</h1> --}}
+    <div class="row">
 
-    <div class="left">
-        <ol>
-            {{#each burgers}}
-            {{#unless devour}}
-            {{> burgers/burger-block devour=true}}
-            {{/unless}}
-            {{/each}}
-        </ol>
-    </div>
-
-    <div class="right">
-
-        <ol>
-            {{#each burgers}}
-            {{#if devour}}
-            <li>
-                {{name}}
-            </li>
-            {{/if}}
-            {{/each}}
-        </ol>
-    </div>
-
-
-    <form class="create-form text-center">
-
-        <div class="form-group">
-            <textarea type="text" id="burger" style="width: 300px"></textarea>
-            <input type="hidden" id="devour" value="0">
+        <div class="col-md-6">
+            <div class="card mt-2 mb-2" style="background:transparent">
+                <h3 class="card-header text-center"> Burgers on the Menu</h3>
+                <div class="card-body">
+                    <ol>
+                        {{#each burgers}}
+                        {{#unless devour}}
+                        {{> burgers/burger-block devour=true}}
+                        {{/unless}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <div class="col-md-6">
+            <div class="card mt-2 mb-2" style="background:transparent">
+                <h3 class="card-header text-center">Devoured Burgers:</h3>
+                <div class="card-body">
+                    <ol>
+                        {{#each burgers}}
+                        {{#if devour}}
+                        {{> burgers/burger-block devour=false}}
+                        {{/if}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-8 col-centered">
+            <form class="create-form text-center">
+
+                <div class="my-3">
+                    <textarea type="text" style="width:300px;" class="rounded" id="burger"></textarea>
+                    <input type="hidden" id="devour" value="0">
+                </div>
+                <button type="submit" class="btn btn-success">Place an Order</button>
 
 
-        <h3>Enter a burger you want to eat and click submit button</h3>
-    </form>
+                <h4 class="mt-2">Request a new Burger and Place your order</h4>
+            </form>
+        </div>
+    </div>
 </div>
