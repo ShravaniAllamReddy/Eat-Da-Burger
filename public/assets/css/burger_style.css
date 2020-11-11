@@ -1,44 +1,26 @@
 body {
-    background-image: url("/assets/img/tastyburger.jpg"); 
+    background-image: url("/assets/img/burger2.jpg"); 
     background-repeat: no-repeat; 
     background-size: cover; 
+    background-attachment: fixed;
     background-color: tomato;
 }
 
-.hero-image{
-    background-image: url("/assets/img/bur.jpg"); 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-}
 
-h1{
-    text-align: center;
-    font-weight: bold;
-    color: tomato;
-}
-h2{
+h2,h4{
     color:yellow;
 }
 
 h3{
-    color:black;
+    color: tomato;
 }
 
-ol li{
-  
-  color:yellow;
-  margin: 0 10px;
-  padding: 0 10px;
-   
+.list-group-item {
+    display: list-item;
 }
 
-.left{
-    float: left;
-    width: 50%;
-}
 
-.right
-{
-    float: left;
-    width: 50%;
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
