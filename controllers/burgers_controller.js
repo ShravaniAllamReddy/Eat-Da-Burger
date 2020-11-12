@@ -5,6 +5,7 @@ const router = express.Router();
 // Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
+//Reads all entries from database and renders them to the Client using handlebars.
 router.get("/", function (req, res) {
     burger.all(function (data) {
         const hbsObject = {
@@ -15,6 +16,7 @@ router.get("/", function (req, res) {
     });
 });
 
+//Reads all entries from the database and returns the json object of burgers array
 router.get("/api/burgers", function (req, res) {
     burger.all(function (data) {
         const hbsObject = {
@@ -25,13 +27,14 @@ router.get("/api/burgers", function (req, res) {
     });
 });
 
+//Creates a new burger and adds it to the database
 router.post("/api/burgers", function (req, res) {
     burger.create(["name", "devour"], [req.body.name, req.body.devour], function (result) {
-        // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
 });
 
+//Updates a burger using its primary key(ID) which changes devoured status
 router.put("/api/burgers/:id", function (req, res) {
     const condition = "id = " + req.params.id;
 
@@ -49,6 +52,7 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+//Deletes a burger from the devoured area using its primary key(ID)
 router.delete("/api/burgers/:id", function (req, res) {
     const condition = "id = " + req.params.id;
 
